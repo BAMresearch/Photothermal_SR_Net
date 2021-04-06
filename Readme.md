@@ -25,7 +25,7 @@ Gradient step and with tied or untied training by changing the boolean value for
 * untied: we learn the regularization parameters and also the weight matrices of the gradient for each layer.
 (for more information contact me or see https://arxiv.org/abs/2012.03547)
 
-2. Open run.py and select which kind of network (with or without ReLU, untied or tied) and how many layers you want to test and run the script by changing s WithReLU={False,True} and T={1,..6}.
+2. Open run.py and select which kind of network (with or without ReLU, untied or tied) and how many layers you want to test and run the script by changing WithReLU={False,True} and T={1,..6}.
 The pretrained networks with T=6 layers are provided.
 3. Start the training with 
 ```
