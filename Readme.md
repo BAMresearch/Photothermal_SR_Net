@@ -23,7 +23,7 @@ We could not provide the real measurement presented in the paper due to copyrigh
 Gradient step and with tied or untied training by changing the boolean value for the variable Untied={False,True}. The difference between tied and untied is the following:
 * tied: we learn the regularization parameters of each layer
 * untied: we learn the regularization parameters and also the weight matrices of the gradient for each layer.
-(s. paper for more information)
+(for more information contact me or see https://arxiv.org/abs/2012.03547)
 
 2. Open run.py and select which kind of network (with or without ReLU, untied or tied) and how many layers you want to test and run the script by changing s WithReLU={False,True} and T={1,..6}.
 The pretrained networks with T=6 layers are provided.
