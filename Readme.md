@@ -24,7 +24,7 @@ Gradient step, untied or tied) and how many layers you want to test and run the 
 The pretrained networks with T=6 layers are provided. The difference between tied and untied is the following:
 * tied: we learn the regularization parameters of each layer
 * untied: we learn the regularization parameters and also the weight matrices of the gradient for each layer 
-(for more information contact @janhauffen or see https://arxiv.org/abs/2012.03547).
+(for more information contact @janhauffen, @samimahmadi or see https://arxiv.org/abs/2012.03547).
 3. Start the training with 
 ```
 python run.py
