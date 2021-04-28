@@ -18,6 +18,9 @@ import matplotlib.pyplot as plt
 np.random.seed(1) # numpy is good about making repeatable output
 tf.set_random_seed(1) # on the other hand, this is basically useless (see issue 9171)
 
+T = 6     # the number of layer
+Net = 'LBFISTA' #possible: 'LBElastic_Net', 'LBFastElastic_Net', 'LBISTA', 'LBFISTA'
+
 WithReLU = True #Decide if you want to train/test with or without an ReLU after the gradient step
 Untied = True   
 
@@ -36,9 +39,6 @@ sys.path.insert(0, path)
 
 #import the networks
 import problem, network, train
-
-T = 6     # the number of layer
-Net = 'LBFISTA' #possible: 'LBElastic_Net', 'LBFastElastic_Net', 'LBISTA', 'LBFISTA'
 
 prob = problem.thermoprob2(L=1280, B=147, MC=150, pnz=.01, SNR_dB=8, DB = 10, abs_hi = 1)
                             # Parameters: L Number of x-Dimension, B Number of Measurments, pnz possibility of nonzero blocks,
