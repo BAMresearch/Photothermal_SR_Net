@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 np.random.seed(1) # numpy is good about making repeatable output
 tf.set_random_seed(1) # on the other hand, this is basically useless (see issue 9171)
 
-T = 6     # the number of layer
+T = 6     # the number of layers
 Net = 'LBFISTA' #possible: 'LBElastic_Net', 'LBFastElastic_Net', 'LBISTA', 'LBFISTA'
 
 WithReLU = True #Decide if you want to train/test with or without an ReLU after the gradient step
