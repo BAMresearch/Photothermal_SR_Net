@@ -1,6 +1,6 @@
 # Photothermal-SR-Net
 ### Underlying Problem: 
-Find X s.t. Y = P * X + $$\epsilon$$ where P is a given
+Find X s.t. Y = P * X + \epsilon where P is a given
 Point Spread Function.
 We present deep unfolding for Block ISTA/FISTA and Block Elastic Net/Fast Elastic Net,
 which solves the least square problem connected to the underlying problem with an
