@@ -1,7 +1,7 @@
 # Photothermal-SR-Net
 ### Underlying Problem: 
 Find <img src="https://render.githubusercontent.com/render/math?math=x^m"> s.t. <img src="https://render.githubusercontent.com/render/math?math=t^m = \phi \ast x^m">, <img src="https://render.githubusercontent.com/render/math?math=m=1,\dots,N_{meas}"> where <img src="https://render.githubusercontent.com/render/math?math=t^m"> are measurements obtained from an IR camera and <img src="https://render.githubusercontent.com/render/math?math=\phi"> represents  the  discrete equivalent  of  the  fundamental  solution  of  the  heat  diffusion equation. The goal is to reconstruct the defect pattern <img src="https://render.githubusercontent.com/render/math?math=a"> in <img src="https://render.githubusercontent.com/render/math?math=x^m">.
-We present deep unfolding for Block ISTA, i.e. Learned Block ISTA (LBISTA), to solve the least square problem 
+We present deep unfolding for Block-ISTA type algorithms, to solve the least square problem 
 <img src="https://render.githubusercontent.com/render/math?math=\min_{X} \sum_{m=1}^{N_{meas}} \sum_{k=1}^{N_r}| (\phi \ast x^m)[k] - t^m[k]|^2  %2B  \lambda \|X\|_{2,1}">
 with 
 <img src="https://render.githubusercontent.com/render/math?math=\|X\|_{2,1} = \sum_{k=1}^{N_r} \sqrt{\sum_{m=1}^{N_{\text{meas}}} |\mathbf{\mathbf{x}}_\text{reduc}^m[k]|^2}">
