@@ -1,13 +1,15 @@
 # Photothermal-SR-Net
 ### Underlying Problem: 
-Find X s.t. Y = P * X + \epsilon where P is a given
-Point Spread Function.
-We present deep unfolding for Block ISTA/FISTA and Block Elastic Net/Fast Elastic Net,
-which solves the least square problem connected to the underlying problem with an
-additional block sparsity inducing term (l_{2,1} regularization) respectively a
-block sparsity inducing term and an additional Tikhonov regularization term (l_{2,1} + l_{2} regularization). These will be trained for X,Y with dimension N_{x}, N_{meas} and then applied to each pixel row of a given measurement Y. Block ISTA and Block Elastic Net use the following two steps in the iteration to approximate X:
+Find <img src="https://render.githubusercontent.com/render/math?math=x^m"> s.t. <img src="https://render.githubusercontent.com/render/math?math=t^m = \phi \ast x^m">, <img src="https://render.githubusercontent.com/render/math?math=m=1,\dots,N_{meas}"> where <img src="https://render.githubusercontent.com/render/math?math=t^m"> are measurements obtained from an IR camera and <img src="https://render.githubusercontent.com/render/math?math=\phi"> represents  the  discrete equivalent  of  the  fundamental  solution  of  the  heat  diffusion equation. The goal is to reconstruct the defect pattern <img src="https://render.githubusercontent.com/render/math?math=a"> in <img src="https://render.githubusercontent.com/render/math?math=x^m">.
+We present deep unfolding for Block ISTA, i.e. Learned Block ISTA (LBISTA), to solve the least square problem 
+<img src="https://render.githubusercontent.com/render/math?math=\min_{X} \sum_{m=1}^{N_{meas}} \sum_{k=1}^{N_r}| (\phi \ast x^m)[k] - t^m[k]|^2  %2B  \lambda \|X\|_{2,1}">
+with 
+<img src="https://render.githubusercontent.com/render/math?math=\|X\|_{2,1} = \sum_{k=1}^{N_r} \sqrt{\sum_{m=1}^{N_{\text{meas}}} |\mathbf{\mathbf{x}}_\text{reduc}^m[k]|^2}">
+Block ISTA is an iterative algorithm and consists of the following two steps :
 1. Gradient step (obtained by least square term)
-2. use Proximal Operator (obtained by regularization)
+2. Proximal Operator (obtained by regularization)
+
+With deep unfolding we train certain parameters inside this algorithm to increase convergence speed and bypass the empiricall choice of the regularization parameters.
 
 If Fast- is used, an additional step to increase convergence speed is added.
    For every network, the pretrained models for all trainings for T=6 Layers are provided.
